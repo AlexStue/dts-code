@@ -34,6 +34,5 @@ for user in users:
     print(output)
     log_output.append(output)
 
-if os.environ.get('LOG') == '1':
-    with open('api_test-2.log', 'a') as file:
-        file.write('\n'.join(log_output))
+with open('api_test-2.log', 'a') as file:
+    file.write('\n'.join(log_output))

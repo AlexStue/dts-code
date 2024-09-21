@@ -30,6 +30,7 @@ for user in users:
         log_output.append(model_output)
 
         for sentence in sentences:
+            sentence = sentence["sentence"]
             r = requests.get(f"http://{api_address}:{api_port}/v{model}/sentiment",
                              params={"username": name, "password": password, "sentence": sentence})
             data = r.json()
@@ -38,9 +39,9 @@ for user in users:
             log_output.append(sentence_output)
 
             if score is not None:
-                if model == 1 and score > 0:
+                if sentence == 'life is beautiful' and score > 0:
                     status_output = " ==> Test status: SUCCESS \n"
-                elif model == 2 and score < 0:
+                elif sentence == 'that sucks' and score < 0:
                     status_output = " ==> Test status: SUCCESS \n"
                 else:
                     status_output = " ==> Test status: FAILURE \n"
@@ -51,6 +52,5 @@ for user in users:
 
 print(log_output)
 
-if os.environ.get('LOG') == '1':
-    with open('api_test-3.log', 'a') as file:
-        file.write(''.join(log_output))
+with open('api_test-3.log', 'a') as file:
+    file.write(''.join(log_output))

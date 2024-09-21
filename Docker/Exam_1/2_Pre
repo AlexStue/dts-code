@@ -35,7 +35,7 @@ curl 'http://34.242.249.87:8000/v2/sentiment?username=alice&password=wonderland&
 
 curl -i 'http://webserver:8000/permissions?username=alice&password=wonderland'
 
-
+http://localhost:8000/v2/sentiment?username=alice&password=wonderland&sentence=that%20sucks'
 
 
 
