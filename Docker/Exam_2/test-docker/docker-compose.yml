@@ -1,0 +1,9 @@
+version: '3.8'
+services:
+  myservice:
+    build:
+      context: .
+      dockerfile: Dockerfile
+networks:
+  my-network:
+    driver: bridge

@@ -1,14 +1,12 @@
-FROM python:3.8.10
+FROM python:3.9
 
 WORKDIR /app
 
-# Copy the requirements file first
-COPY requirements.txt ./
+COPY ../test-3/requirements.txt .
+COPY ../test-3/test-3.py .
+COPY ../dataset/ds-users.json .
+COPY ../dataset/ds-sentences.json .
 
-RUN pip install --no-cache-dir -r requirements.txt 
+RUN pip install --no-cache-dir -r requirements.txt
 
-# Copy the dataset and application code
-#COPY ../dataset /app/dataset
-COPY . .
-
-CMD ["python3", "test-.py"]
+CMD ["python", "test-3.py"]

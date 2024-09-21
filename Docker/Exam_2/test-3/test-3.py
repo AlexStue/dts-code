@@ -3,14 +3,14 @@ import requests
 import json
 
 # Load dataset file
-with open('../dataset/ds-users.json', 'r') as file1:
+with open('ds-users.json', 'r') as file1:
     users = json.load(file1)
 
 # Load dataset file
-with open('../dataset/ds-sentences.json', 'r') as file2:
+with open('ds-sentences.json', 'r') as file2:
     sentences = json.load(file2)
 
-api_address = 'localhost'
+api_address = 'host.docker.internal'
 api_port = 8000
 log_output = []
 
@@ -48,6 +48,8 @@ for user in users:
                 status_output = " ==> Test status: SCORE NOT AVAILABLE \n"
             
             log_output.append(status_output)
+
+print(log_output)
 
 if os.environ.get('LOG') == '1':
     with open('api_test-3.log', 'a') as file:

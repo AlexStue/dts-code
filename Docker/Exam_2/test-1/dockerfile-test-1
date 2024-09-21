@@ -2,10 +2,10 @@ FROM python:3.9
 
 WORKDIR /app
 
-COPY ../test-2/requirements.txt .
-COPY ../test-2/test-2.py .
+COPY ../test-1/requirements.txt .
+COPY ../test-1/test-1.py .
 COPY ../dataset/ds-users.json .
 
 RUN pip install --no-cache-dir -r requirements.txt
 
-CMD ["python", "test-2.py"]
+CMD ["python", "test-1.py"]

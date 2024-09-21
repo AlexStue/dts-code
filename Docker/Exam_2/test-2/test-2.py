@@ -3,10 +3,10 @@ import requests
 import json
 
 # Load dataset file
-with open('../dataset/ds-users.json', 'r') as file:
+with open('ds-users.json', 'r') as file:
     users = json.load(file)
 
-api_address = 'localhost'
+api_address = 'host.docker.internal'
 api_port = 8000
 log_output = []
 
