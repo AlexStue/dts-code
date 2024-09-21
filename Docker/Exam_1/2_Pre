@@ -1,0 +1,98 @@
+
+
+
+
+
+curl -X 'GET' \
+  'http://34.242.249.87:8000/permissions?username=alice&password=wonderland' \
+  -H 'accept: application/json'
+
+curl -X 'GET' \
+  'http://34.242.249.87:8000/permissions?username=bob&password=builder' \
+  -H 'accept: application/json'
+
+curl -X 'GET' \
+  'http://34.242.249.87:8000/permissions?username=clementine&password=mandarin' \
+  -H 'accept: application/json'
+
+curl -i 'http://34.242.249.87:8000/permissions?username=alice&password=wonderland'
+_________________
+Authentication 1
+
+curl -i 'http://34.242.249.87:8000/permissions?username=alice&password=wonderland'
+curl -i 'http://34.242.249.87:8000/permissions?username=bob&password=builder'
+curl -i 'http://34.242.249.87:8000/permissions?username=clementine&password=mandarin'
+
+_________________
+Authentication 2
+
+curl 'http://34.242.249.87:8000/v1/sentiment?username=alice&password=wonderland&sentence=life%20is%20beautiful'
+curl 'http://34.242.249.87:8000/v1/sentiment?username=alice&password=wonderland&sentence=that%20sucks'
+curl 'http://34.242.249.87:8000/v2/sentiment?username=alice&password=wonderland&sentence=life%20is%20beautiful'
+curl 'http://34.242.249.87:8000/v2/sentiment?username=alice&password=wonderland&sentence=that%20sucks'
+
+
+
+curl -i 'http://webserver:8000/permissions?username=alice&password=wonderland'
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.

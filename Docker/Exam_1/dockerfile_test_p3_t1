@@ -1,0 +1,8 @@
+FROM python:3.8.10
+
+WORKDIR /home/ubuntu/dockertest
+COPY . .
+
+RUN pip install --no-cache-dir -r requirements.txt
+
+CMD ["python3", "/home/ubuntu/dockertest/test_P3_T1.py"]

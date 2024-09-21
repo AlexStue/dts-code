@@ -1,0 +1,107 @@
+version: '3.8'
+
+services:
+  webserver:
+    image: datascientest/fastapi:1.0.0
+    networks:
+      - mynetwork
+##############################################
+  test_p1_t1:
+    build:
+      context: .
+      dockerfile: dockerfile_test_p1_t1
+    depends_on:
+      - webserver
+    env_file:
+      - variables.env
+    networks:
+      - mynetwork
+
+  test_p1_t2:
+    build:
+      context: .
+      dockerfile: dockerfile_test_p1_t2
+    depends_on:
+      - webserver
+    env_file:
+      - variables.env
+    networks:
+      - mynetwork
+##############################################
+  test_p2_t1:
+    build:
+      context: .
+      dockerfile: dockerfile_test_p2_t1
+    depends_on:
+      - webserver
+    env_file:
+      - variables.env
+    networks:
+      - mynetwork
+
+  test_p2_t2:
+    build:
+      context: .
+      dockerfile: dockerfile_test_p2_t2
+    depends_on:
+      - webserver
+    env_file:
+      - variables.env
+    networks:
+      - mynetwork
+##############################################
+  test_p3_t1:
+    build:
+      context: .
+      dockerfile: dockerfile_test_p3_t1
+    depends_on:
+      - webserver
+    env_file:
+      - variables.env
+    networks:
+      - mynetwork
+
+  test_p3_t2:
+    build:
+      context: .
+      dockerfile: dockerfile_test_p3_t2
+    depends_on:
+      - webserver
+    env_file:
+      - variables.env
+    networks:
+      - mynetwork
+##############################################
+networks:
+  mynetwork:
+    driver: bridge
+---
+
+mkdir dockertest
+mkdir -p logs
+cd dockertest
+
+# generating docker and python files
+
+docker stop $(docker ps -q)
+docker rm $(docker ps -a -q)
+docker-compose build
+docker-compose up -d
+docker-compose logs test_p1_t1
+docker-compose logs test_p1_t2
+docker-compose logs test_p2_t1
+docker-compose logs test_p2_t2
+docker-compose logs test_p3_t1
+docker-compose logs test_p3_t2
+
+docker-compose logs test_p1_t1 > logs/test_p1_t1.log
+docker-compose logs test_p1_t2 > logs/test_p1_t2.log
+docker-compose logs test_p2_t1 > logs/test_p2_t1.log
+docker-compose logs test_p2_t2 > logs/test_p2_t2.log
+docker-compose logs test_p3_t1 > logs/test_p3_t1.log
+docker-compose logs test_p3_t2 > logs/test_p3_t2.log
+
+---
+scp -i "data_enginering_machine.pem" ubuntu@34.242.249.87:~/exam_docker.tar .
+
+.

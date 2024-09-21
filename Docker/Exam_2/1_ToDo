@@ -1,0 +1,25 @@
+Good first attempt, but this approach won't be applicable if the test dataset gets larger. 
+You shouldn’t create a script and a Dockerfile for each dataset. 
+Instead, you should place the dataset in a dictionary. 
+You should only have one script per type of test (one script for Authentication, one for Authorization, and one for testing content), which implies a maximum of three Dockerfiles. 
+You can also improve the structure of your submission a bit. The cleanest way is to create a folder for each test, placing the Dockerfile and the script inside, for example. 
+It might also be helpful, as you refine this work, to review the "Unit Testing" module because we’re trying to simulate a unit test architecture through this exercise—an essential concept for a DevOps professional.
+
+one script authentication
+one script authorization
+one script model
+-> 3 dockerfiles
+
+
+dataset as dictionary
+one script per test
+one dockerfile per test
+
+
+http://localhost:8000/permissions?username=bob&password=builder
+
+
+
+
+
+

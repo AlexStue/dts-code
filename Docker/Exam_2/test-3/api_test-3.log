@@ -1,0 +1,38 @@
+============================
+Model Test
+==============
+For User: alice
+Model: v1
+Sentence "{'sentence': 'life is beautiful'}" has score of: 0.0772
+ ==> Test status: SUCCESS 
+Sentence "{'sentence': 'that sucks'}" has score of: 0.0772
+ ==> Test status: SUCCESS 
+Model: v2
+Sentence "{'sentence': 'life is beautiful'}" has score of: 0.0772
+ ==> Test status: FAILURE 
+Sentence "{'sentence': 'that sucks'}" has score of: 0.0772
+ ==> Test status: FAILURE 
+==============
+For User: bob
+Model: v1
+Sentence "{'sentence': 'life is beautiful'}" has score of: 0.0772
+ ==> Test status: SUCCESS 
+Sentence "{'sentence': 'that sucks'}" has score of: 0.0772
+ ==> Test status: SUCCESS 
+Model: v2
+Sentence "{'sentence': 'life is beautiful'}" has score of: None
+ ==> Test status: SCORE NOT AVAILABLE 
+Sentence "{'sentence': 'that sucks'}" has score of: None
+ ==> Test status: SCORE NOT AVAILABLE 
+==============
+For User: clementine
+Model: v1
+Sentence "{'sentence': 'life is beautiful'}" has score of: None
+ ==> Test status: SCORE NOT AVAILABLE 
+Sentence "{'sentence': 'that sucks'}" has score of: None
+ ==> Test status: SCORE NOT AVAILABLE 
+Model: v2
+Sentence "{'sentence': 'life is beautiful'}" has score of: None
+ ==> Test status: SCORE NOT AVAILABLE 
+Sentence "{'sentence': 'that sucks'}" has score of: None
+ ==> Test status: SCORE NOT AVAILABLE 
