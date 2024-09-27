@@ -1,0 +1,13 @@
+exam:
+- link to git
+- captures of the results within Jenkins in a PDF file
+- link to dockerhub
+
+ToDo:
+- k8s with 4 deployments with namespaces:
+  - dev
+  - QA
+  - staging
+  - prod
+- Code on GitHub
+- 

@@ -1,0 +1,43 @@
+
+mkdir mongodb
+cd mongodb
+
+Container:
+apt-get update
+apt-get install sudo
+apt-get install wget -y
+wget https://dst-de.s3.eu-west-3.amazonaws.com/mongo_fr/books.json
+
+mongoimport -d sample -c books --authenticationDatabase admin --username datascientest --password dst123 --file books.json
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

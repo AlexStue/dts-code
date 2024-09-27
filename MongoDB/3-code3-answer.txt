@@ -1,0 +1,55 @@
+alex@192 MongoDB % python3 3-code3.py
+{'ok': 1.0}
+MongoDB without user is running.
+Traceback (most recent call last):
+  File "/Users/alex/Desktop/DevOps/dts-code/MongoDB/3-code3.py", line 21, in <module>
+    print(client2.admin.command('ping'))
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/alex/Desktop/DevOps/dts-code/.venv/lib/python3.12/site-packages/pymongo/_csot.py", line 120, in csot_wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/alex/Desktop/DevOps/dts-code/.venv/lib/python3.12/site-packages/pymongo/synchronous/database.py", line 906, in command
+    with self._client._conn_for_reads(read_preference, session, operation=command_name) as (
+  File "/opt/local/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/contextlib.py", line 137, in __enter__
+    return next(self.gen)
+           ^^^^^^^^^^^^^^
+  File "/Users/alex/Desktop/DevOps/dts-code/.venv/lib/python3.12/site-packages/pymongo/synchronous/mongo_client.py", line 1683, in _conn_from_server
+    with self._checkout(server, session) as conn:
+  File "/opt/local/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/contextlib.py", line 137, in __enter__
+    return next(self.gen)
+           ^^^^^^^^^^^^^^
+  File "/Users/alex/Desktop/DevOps/dts-code/.venv/lib/python3.12/site-packages/pymongo/synchronous/mongo_client.py", line 1593, in _checkout
+    with server.checkout(handler=err_handler) as conn:
+  File "/opt/local/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/contextlib.py", line 137, in __enter__
+    return next(self.gen)
+           ^^^^^^^^^^^^^^
+  File "/Users/alex/Desktop/DevOps/dts-code/.venv/lib/python3.12/site-packages/pymongo/synchronous/pool.py", line 1335, in checkout
+    conn = self._get_conn(checkout_started_time, handler=handler)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/alex/Desktop/DevOps/dts-code/.venv/lib/python3.12/site-packages/pymongo/synchronous/pool.py", line 1494, in _get_conn
+    conn = self.connect(handler=handler)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/alex/Desktop/DevOps/dts-code/.venv/lib/python3.12/site-packages/pymongo/synchronous/pool.py", line 1295, in connect
+    conn.authenticate()
+  File "/Users/alex/Desktop/DevOps/dts-code/.venv/lib/python3.12/site-packages/pymongo/synchronous/pool.py", line 648, in authenticate
+    auth.authenticate(creds, self, reauthenticate=reauthenticate)
+  File "/Users/alex/Desktop/DevOps/dts-code/.venv/lib/python3.12/site-packages/pymongo/synchronous/auth.py", line 452, in authenticate
+    auth_func(credentials, conn)
+  File "/Users/alex/Desktop/DevOps/dts-code/.venv/lib/python3.12/site-packages/pymongo/synchronous/auth.py", line 356, in _authenticate_default
+    return _authenticate_scram(credentials, conn, "SCRAM-SHA-1")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/alex/Desktop/DevOps/dts-code/.venv/lib/python3.12/site-packages/pymongo/synchronous/auth.py", line 95, in _authenticate_scram
+    res = conn.command(source, cmd)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/alex/Desktop/DevOps/dts-code/.venv/lib/python3.12/site-packages/pymongo/synchronous/helpers.py", line 45, in inner
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/alex/Desktop/DevOps/dts-code/.venv/lib/python3.12/site-packages/pymongo/synchronous/pool.py", line 538, in command
+    return command(
+           ^^^^^^^^
+  File "/Users/alex/Desktop/DevOps/dts-code/.venv/lib/python3.12/site-packages/pymongo/synchronous/network.py", line 218, in command
+    helpers_shared._check_command_response(
+  File "/Users/alex/Desktop/DevOps/dts-code/.venv/lib/python3.12/site-packages/pymongo/helpers_shared.py", line 247, in _check_command_response
+    raise OperationFailure(errmsg, code, response, max_wire_version)
+pymongo.errors.OperationFailure: Authentication failed., full error: {'ok': 0.0, 'errmsg': 'Authentication failed.', 'code': 18, 'codeName': 'AuthenticationFailed'}
+alex@192 MongoDB % 
