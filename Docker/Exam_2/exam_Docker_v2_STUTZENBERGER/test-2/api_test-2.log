@@ -1,0 +1,15 @@
+
+    ============================
+    | Authorization test: request done at "/permissions"
+    | User "alice" has authorizations for model: v1, v2
+    
+
+    ============================
+    | Authorization test: request done at "/permissions"
+    | User "bob" has authorizations for model: v1
+    
+
+    ============================
+    | Authorization test: request done at "/permissions"
+    | User "clementine" has authorizations for model: none
+    

@@ -1,0 +1,26 @@
+#version: '3.8'
+services:
+  myservice-1:
+    build:
+      context: .
+      dockerfile: test-1/dockerfile-test-1
+    networks:
+      - my-network
+
+  myservice-2:
+    build:
+      context: .
+      dockerfile: test-2/dockerfile-test-2
+    networks:
+      - my-network
+
+  myservice-3:
+    build:
+      context: .
+      dockerfile: test-3/dockerfile-test-3
+    networks:
+      - my-network
+
+networks:
+  my-network:
+    driver: bridge

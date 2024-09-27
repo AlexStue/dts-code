@@ -1,0 +1,38 @@
+============================
+Model Test
+==============
+For User: alice
+Model: v1
+Sentence "life is beautiful" has score of: 0.5994
+ ==> Test status: SUCCESS 
+Sentence "that sucks" has score of: -0.3612
+ ==> Test status: SUCCESS 
+Model: v2
+Sentence "life is beautiful" has score of: 0.5994
+ ==> Test status: SUCCESS 
+Sentence "that sucks" has score of: -0.3612
+ ==> Test status: SUCCESS 
+==============
+For User: bob
+Model: v1
+Sentence "life is beautiful" has score of: 0.5994
+ ==> Test status: SUCCESS 
+Sentence "that sucks" has score of: -0.3612
+ ==> Test status: SUCCESS 
+Model: v2
+Sentence "life is beautiful" has score of: None
+ ==> Test status: SCORE NOT AVAILABLE 
+Sentence "that sucks" has score of: None
+ ==> Test status: SCORE NOT AVAILABLE 
+==============
+For User: clementine
+Model: v1
+Sentence "life is beautiful" has score of: None
+ ==> Test status: SCORE NOT AVAILABLE 
+Sentence "that sucks" has score of: None
+ ==> Test status: SCORE NOT AVAILABLE 
+Model: v2
+Sentence "life is beautiful" has score of: None
+ ==> Test status: SCORE NOT AVAILABLE 
+Sentence "that sucks" has score of: None
+ ==> Test status: SCORE NOT AVAILABLE 
