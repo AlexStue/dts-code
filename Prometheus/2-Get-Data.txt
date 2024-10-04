@@ -1,0 +1,51 @@
+
+Application Metrics:	HTTP request rate, latency, error rate, CPU, memory, disk I/O, thread pool usage
+Database Metrics:	Query latency, throughput, slow queries, DB CPU, memory, disk I/O, active connections
+Infrastructure:	Server CPU, memory, disk space, network traffic
+Availability & Health:	Uptime, response time, service error rate
+
+Alerting on Key Metrics:
+CPU Usage > 80% for extended periods.
+Memory Usage > 90%.
+HTTP Error Rate > 5%.
+Database Query Latency > 500ms.
+Storage Space < 10% Free.
+
+#####################
+
+- Native export: 
+    the service natively exposes metrics (e.g. Prometheus).
+- Direct instrumentation : 
+    the service code directly contains the information to be displayed using a client library.
+- Using exporters (Exporters): 
+    a daemon is run in parallel with the service you want to monitor and provides the information.
+- Push Gateway: 
+    this daemon is used for ephemeral jobs: you can send it text and it relays metrics to the server.
+
+- Monitoring a machine/server
+For capacity, memory or CPU usage, server temperature..
+For administering a cluster of machines.
+Simplest way is to use an Exporter with official Node exporter.
+
+- Monitoring a Database
+MySQL -> using there Exporter
+Create MySQL via Docker plus User for Exporter
+
+- Monitoring Docker
+Use a experimental Docker Deamon from docker itself
+
+#####################
+
+
+
+
+
+
+
+
+
+
+
+
+
+.
